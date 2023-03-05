@@ -4,12 +4,15 @@ import theme from '../theme';
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: Constants.statusBarHeight,
-        backgroundColor: theme.colors.nav
+        paddingTop: Constants.statusBarHeight + 7,
+        padding: 7,
+        backgroundColor: theme.colors.nav,
+        flexDirection: 'row'
   },
     item: {
+        marginRight: 30,
+        color: 'white',
         padding: 5,
-        color: 'white'
     }
 });
 

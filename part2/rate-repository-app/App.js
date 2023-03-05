@@ -1,26 +1,17 @@
+import { StatusBar } from 'expo-status-bar';
 import Main from './src/components/Main';
-// import FlexboxExample from './src/components/FlexboxExample';
-
-// export default function App() {
-//   return (
-//     <View style={styles.container}>
-//       <Text>This is react native mobile app demo!</Text>
-//       <StatusBar style="auto" />
-//       <PressableText />
-//       <Main />
-//     </View>
-//   );
-// }
-
+import { NativeRouter } from 'react-router-native';
 
 const App = () => {
-  return <Main />;
+  return (
+    <>
+    <NativeRouter>
+      <Main />
+    </NativeRouter>
+    <StatusBar style="auto" />
+  </>
+  );
 };
 export default App;
 
-
-// const App = () => {
-//   return <FlexboxExample />;
-// };
-// export default App;
 
