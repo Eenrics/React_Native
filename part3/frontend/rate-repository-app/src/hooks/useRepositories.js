@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
+import Constants from 'expo-constants';
 
+const REST_URL = Constants.manifest.extra.rest_uri
 const useRepositories = () => {
   const [repositories, setRepositories] = useState();
   const [loading, setLoading] = useState(false);
@@ -7,8 +9,7 @@ const useRepositories = () => {
   const fetchRepositories = async () => {
     setLoading(true);
 
-    const IP_ADDRESS = '192.168.0.104'
-    const response = await fetch(`http://${IP_ADDRESS}:5000/api/repositories`);
+    const response = await fetch(REST_URL);
     const json = await response.json();
 
     setLoading(false);

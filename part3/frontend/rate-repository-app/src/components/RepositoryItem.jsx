@@ -10,8 +10,8 @@ const RepositoryItem = ({value}) => {
           <View style={{flexDirection: 'row'}}>
               <Image source={{uri: value.ownerAvatarUrl}} style={{width: 60, height: 60, borderRadius: 10, margin: 10}}/>
               <View style={{flexDirection: 'column', justifyContent: 'center'}}>
-                  <Text {...style} style={{fontSize: 21, width: 275}}>{value.fullName}</Text>
-                  <Text style={{paddingTop: 4, width: 250, fontSize: 16}}>{value.description}</Text>
+                  <Text {...style} style={{fontSize: 19, width: 240}}>{value.fullName}</Text>
+                  <Text style={{paddingTop: 4, width: 240, fontSize: 16}}>{value.description}</Text>
               </View>
           </View>
 
