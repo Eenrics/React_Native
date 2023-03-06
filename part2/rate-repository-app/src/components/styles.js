@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
         paddingTop: Constants.statusBarHeight + 7,
         padding: 7,
         backgroundColor: theme.colors.nav,
-        flexDirection: 'row'
+        flexDirection: 'row',
   },
     item: {
         marginRight: 30,
