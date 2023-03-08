@@ -1,11 +1,10 @@
-import { StyleSheet, Platform } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { useField } from 'formik';
 import theme from '../theme';
 
 import TextInput from './TextInput';
 import Text from './Text';
 
-console.log(Platform.OS, 'device connected')
 const FormikTextInput = ({ name, ...props }) => {
   const [field, meta, helpers] = useField(name);
   const showError = meta.touched && meta.error;

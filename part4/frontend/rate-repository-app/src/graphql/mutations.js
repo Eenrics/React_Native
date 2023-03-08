@@ -16,3 +16,21 @@ mutation CreateUser($username: String!, $password: String!) {
       }
   }
 `
+
+export const CREATE_REVIEW = gql`
+mutation ($review: CreateReviewInput) {
+  createReview(review: $review) {
+    id
+    createdAt
+    rating
+    repositoryId
+    text
+  }
+}
+`
+
+export const DELETE_REVIEW = gql`
+mutation($deleteReviewId: ID!) {
+  deleteReview(id: $deleteReviewId)
+}
+`

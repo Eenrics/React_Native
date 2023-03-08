@@ -1,12 +1,14 @@
 import Text from "./Text";
 import { Image, View } from "react-native";
 import NumValView from "./NumValView";
+import * as Linking from 'expo-linking';
+import Button from "./Button";
 
-const RepositoryItem = ({value}) => {
+const RepositoryItem = ({value, detail}) => {
   
     const style = {color: 'primary', fontSize: 'subheading', fontWeight: 'bold'}
     return (
-        <View style={{borderBottomWidth: 9, borderColor: '#aaa', paddingTop: 7, paddingBottom: 7}}>
+        <View testID="repositoryItem" style={{borderBottomWidth: 9, borderColor: '#aaa', paddingTop: 7, paddingBottom: 7}}>
           <View style={{flexDirection: 'row'}}>
               <Image source={{uri: value.ownerAvatarUrl}} style={{width: 60, height: 60, borderRadius: 10, margin: 10}}/>
               <View style={{flexDirection: 'column', justifyContent: 'center'}}>
@@ -23,6 +25,8 @@ const RepositoryItem = ({value}) => {
             <NumValView val={value.reviewCount} txt={'Review'} />
             <NumValView val={value.ratingAverage} txt={'Rate'} />
           </View>
+
+          {detail ? <Button action={Linking.openURL} param={value.url} text='Open in Github' /> : null}
         </View>
     )
 }

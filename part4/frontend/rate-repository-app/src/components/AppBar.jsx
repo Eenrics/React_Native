@@ -23,8 +23,16 @@ const AppBar = () => {
                 <AppBarTab value='Repositories' />
               </Link>
              { isLoggedIn ?
-                     <Pressable onPress={() => signOut()}><AppBarTab value='Sign out' /></Pressable> 
-                     : <Link to='/signin'><AppBarTab value='Sign in' /></Link> }
+                       <>
+                         <Link to='/create'><AppBarTab value='Create a review' /></Link> 
+                         <Link to='/myreviews'><AppBarTab value='My Reviews' /></Link> 
+                         <Pressable onPress={() => signOut()}><AppBarTab value='Sign out' /></Pressable>
+                       </>
+                     : <>
+                        <Link to='/signin'><AppBarTab value='Sign in' /></Link>
+                        <Link to='/signup'><AppBarTab value='Sign up' /></Link>
+                       </>
+                          }
             </ScrollView>
           </View>;
 };
